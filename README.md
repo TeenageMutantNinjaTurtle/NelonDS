@@ -9,4 +9,4 @@ melonDS with background music at normal speed during fast-forward (and pitch-pre
 
 `main` is the untouched upstream code; `nelonds` is the feature. Review `nelonds` against `main`.
 
-Build (NixOS): `nix develop --command bash -c 'cd melonDS && cmake -B build -G Ninja -DCMAKE_BUILD_TYPE=Release && ninja -C build'`; Android: `cd android && nix develop --command bash -c 'cd melonDS-android && bash ./gradlew --no-daemon :app:assembleGitHubProdNelon -Pandroid.injected.build.abi=arm64-v8a'`.
+Build (NixOS): `nix develop --command bash -c 'cd melonDS && cmake -B build -G Ninja -DCMAKE_BUILD_TYPE=Release && ninja -C build'`; Android: `cd android && nix develop --command bash -c 'cd melonDS-android && bash ./gradlew --no-daemon :app:assembleGitHubProdNelon -Pandroid.injected.build.abi=arm64-v8a'`. That APK is tuned for the AYN Thor (ARMv8.6); add `-Pnelon.generic` for one that runs on any arm64 device. Prebuilt APKs are on the releases page.

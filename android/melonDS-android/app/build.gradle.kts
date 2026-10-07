@@ -64,10 +64,12 @@ android {
             applicationIdSuffix = ".dev"
             signingConfig = signingConfigs.getByName("debug")
             matchingFallbacks += listOf("release")
-            // Tuned for the AYN Thor (Snapdragon 8 Gen 2: Cortex-X3/A715/A510, ARMv8.6 features, no SVE exposed)
+            // Tuned for the AYN Thor (Snapdragon 8 Gen 2: Cortex-X3/A715/A510, ARMv8.6 features, no SVE exposed);
+            // -Pnelon.generic builds for any arm64 device instead
             externalNativeBuild {
                 cmake {
-                    val tuned = "-O3 -march=armv8.6-a+crypto -mtune=cortex-x3 -fomit-frame-pointer"
+                    val tuned = if (project.hasProperty("nelon.generic")) "-O3 -fomit-frame-pointer"
+                                else "-O3 -march=armv8.6-a+crypto -mtune=cortex-x3 -fomit-frame-pointer"
                     cFlags(tuned)
                     cppFlags(tuned)
                     arguments("-DCMAKE_BUILD_TYPE=Release", "-DENABLE_LTO=ON")

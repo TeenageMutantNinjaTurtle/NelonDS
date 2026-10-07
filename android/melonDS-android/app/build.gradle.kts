@@ -70,8 +70,10 @@ android {
                 cmake {
                     val tuned = if (project.hasProperty("nelon.generic")) "-O3 -fomit-frame-pointer"
                                 else "-O3 -march=armv8.6-a+crypto -mtune=cortex-x3 -fomit-frame-pointer"
-                    cFlags(tuned)
-                    cppFlags(tuned)
+                    // keeps the build machine's paths (assert messages) out of the binary
+                    val prefixMap = "-ffile-prefix-map=${rootDir}=."
+                    cFlags(tuned, prefixMap)
+                    cppFlags(tuned, prefixMap)
                     arguments("-DCMAKE_BUILD_TYPE=Release", "-DENABLE_LTO=ON")
                 }
             }

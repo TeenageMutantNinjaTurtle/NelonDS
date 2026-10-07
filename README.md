@@ -1,6 +1,21 @@
 # NelonDS
 
-melonDS with background music at normal speed during fast-forward (and pitch-preserving fast-forward sound effects), for desktop and the melonDS Android app.
+A fork of melonDS that includes some of the PRs not merged into it yet and a novel feature that **PRESERVES ORIGINAL MUSIC SPEED DURING FAST FORWARD** while keeping sound effects sped up to not have them overlay each other.
+
+This sounds quite decent in a few pokemon games which is what I am mainly interested in.
+
+How does it work? I don't know and I don't care I'm busy vibin to the music while EV training my pokemon.
+ALL MY commits were generated with AI. I am AI you are AI everything is AI - AIAIAI.
+
+Also didn't like the settings menu so did some rounds of AI for it too.
+
+**Confirmed working:**
+- Pokemon Volt White 2 Redux (vanilla BW2 and everything else based off of that should too)
+- Pokemon Platinum (overworld is fine but some battles might be messed up)
+
+---
+
+AI SLOP
 
 - `melonDS/`: the emulator core and Qt frontend (upstream melonDS-emu/melonDS). The `nelonds` branch of this repo carries the change set that is also proposed upstream as `TeenageMutantNinjaTurtle/melonDS:realtime-bgm-fastforward`.
 - `android/melonDS-android/`: the Android app (rafaelvcaetano/melonDS-android) with its core `melonDS-android-lib/` vendored in-tree instead of as a submodule, plus the NelonDS hooks and the Thor-tuned `nelon` build type.

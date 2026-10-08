@@ -158,6 +158,7 @@ class SharedPreferencesSettingsRepository(
             internalDirectory = context.filesDir.absolutePath,
             fastForwardSpeedMultiplier = getFastForwardSpeedMultiplier(),
             fastForwardFrameskip = isFastForwardFrameskipEnabled(),
+            fastForwardMuteSfx = isFastForwardMuteSfxEnabled(),
             rewindEnabled = isRewindEnabled(),
             rewindPeriodSeconds = getRewindPeriod(),
             rewindWindowSeconds = getRewindWindow(),
@@ -187,6 +188,10 @@ class SharedPreferencesSettingsRepository(
 
     override fun isFastForwardFrameskipEnabled(): Boolean {
         return preferences.getBoolean("fast_forward_frameskip", true)
+    }
+
+    override fun isFastForwardMuteSfxEnabled(): Boolean {
+        return preferences.getBoolean("fast_forward_mute_sfx", false)
     }
 
     override fun isRewindEnabled(): Boolean {

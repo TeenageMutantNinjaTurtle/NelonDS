@@ -171,6 +171,8 @@
     <string name="fast_forward_max_speed">Fast-forward max speed</string>
     <string name="fast_forward_frameskip">Skip frames during fast-forward</string>
     <string name="fast_forward_frameskip_summary">NelonDS: only render as many frames as the display can show, so fast-forward runs faster</string>
+    <string name="fast_forward_mute_sfx">Mute sound effects during fast-forward</string>
+    <string name="fast_forward_mute_sfx_summary">NelonDS: silence everything but the background music while fast-forwarding, instead of playing sped-up sound effects and cries</string>
     <string name="rewind_description">When enabled, a save-state is periodically saved automatically. Whenever you want to go back on your progress by a short amount of time, just open the rewind screen and select the state that you want to resume from.\n\nBe aware that by enabling this feature, you may experience occasional stutters if your device is not powerful enough. A considerable amount of memory is also used depending on how often you want the state to be captured and for how long it should be kept.</string>
     <string name="rewind_save_period">Save period</string>
     <string name="rewind_length">Rewind length</string>

@@ -6,6 +6,8 @@ https://github.com/user-attachments/assets/1848c92d-d9a3-48ca-9098-0e0a95b94754
 
 This sounds quite decent in a few pokemon games which is what I am mainly interested in.
 
+If the sped-up sound effects and cries get on your nerves there is a "Mute sound effects during fast-forward" option that keeps only the music, the way [PokeDaisy](https://github.com/lidor30/pokedaisy) does it for GBA.
+
 How does it work? I don't know and I don't care I'm busy vibin to the music while EV training my pokemon.
 ALL MY commits were generated with AI. I am AI you are AI everything is AI - AIAIAI.
 

@@ -47,7 +47,7 @@ public:
     void releaseScreen();
     void pressKey(u32 key);
     void releaseKey(u32 key);
-    int readAudioOutput(s16* buffer, int length, double outputRate, double speedRatio = 1.0, int volume = 256);
+    int readAudioOutput(s16* buffer, int length, double outputRate, double speedRatio = 1.0, int volume = 256, bool muteSfx = false);
     void setAudioOutputSkew(double skew);
     void setFastForward(bool enabled);
     void setFrameSkip(int renderEveryN);

@@ -496,9 +496,14 @@ void MelonInstance::releaseKey(u32 key)
     }
 }
 
-int MelonInstance::readAudioOutput(s16* buffer, int length, double outputRate, double speedRatio, int volume)
+int MelonInstance::readAudioOutput(s16* buffer, int length, double outputRate, double speedRatio, int volume, bool muteSfx)
 {
     int num_in = nds->SPU.ReadOutputStretched(buffer, length, speedRatio);
+
+    // NelonDS: the SPU output is everything the host BGM renderer does not play (effects, cries,
+    // and the music itself when no host voice is active); still drain it so the ring stays in sync
+    if (muteSfx && num_in > 0)
+        memset(buffer, 0, num_in * 2 * sizeof(s16));
 
     // NelonDS: the host BGM renderer is paced by the audio device, so it renders exactly `length` frames
     // per callback; it keeps running while muted so it stays in time with the game

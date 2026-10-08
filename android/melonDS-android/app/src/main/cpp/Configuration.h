@@ -74,6 +74,7 @@ typedef struct
     char* internalFilesDir;
     float fastForwardSpeedMultiplier;
     bool fastForwardFrameskip;
+    bool fastForwardMuteSfx;
     bool showBootScreen;
     bool useJit;
     int consoleType;

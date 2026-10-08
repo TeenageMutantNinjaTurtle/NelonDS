@@ -9,6 +9,7 @@ using namespace melonDS;
 
 // set by MelonDSAndroidJNI.cpp's emu thread
 extern bool isFastForwardEnabled;
+extern bool fastForwardMuteSfx;
 extern int targetFps;
 extern float fps;
 
@@ -43,7 +44,8 @@ OboeCallback::onAudioReady(oboe::AudioStream *stream, void *audioData, int32_t n
         speedRatio = std::clamp(speedRatio, 1.0, 8.0);
     }
 
-    int num_in = currentInstance->readAudioOutput((s16*) audioData, len_in, stream->getSampleRate(), speedRatio, _volume);
+    bool muteSfx = isFastForwardEnabled && fastForwardMuteSfx;
+    int num_in = currentInstance->readAudioOutput((s16*) audioData, len_in, stream->getSampleRate(), speedRatio, _volume, muteSfx);
 
     if (num_in < 1)
     {

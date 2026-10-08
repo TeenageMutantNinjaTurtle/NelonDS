@@ -112,6 +112,13 @@
        </widget>
       </item>
       <item>
+       <widget class="QCheckBox" name="cbFastForwardMuteSfx">
+        <property name="text">
+         <string>Mute sound effects during fast-forward, keep the music</string>
+        </property>
+       </widget>
+      </item>
+      <item>
        <widget class="QCheckBox" name="cbFastForwardFrameskip">
         <property name="text">
          <string>Skip rendering frames the display can't show during fast-forward</string>

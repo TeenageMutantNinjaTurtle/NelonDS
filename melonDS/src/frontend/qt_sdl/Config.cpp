@@ -114,6 +114,7 @@ DefaultList<bool> DefaultBools =
     {"Instance*.RTC.SyncToHost", true},
     {"Audio.RealtimeBGM", true},
     {"Audio.FastForwardStretch", true},
+    {"Audio.FastForwardMuteSfx", false},
     {"Video.FastForwardFrameskip", true},
 };
 

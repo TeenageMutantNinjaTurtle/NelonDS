@@ -38,6 +38,7 @@ void EmuInstance::audioInit()
 
     audioMutedToggle = false;
     audioMutedByFastForward = false;
+    audioSfxMutedByFastForward = false;
     audioMutedByWindowFocus = false;
     audioSyncCond = SDL_CreateCond();
     audioSyncLock = SDL_CreateMutex();
@@ -133,6 +134,7 @@ void EmuInstance::toggleAudioMute()
 void EmuInstance::updateFastForwardMute(bool fastForward)
 {
     audioMutedByFastForward = fastForward && globalCfg.GetBool("MuteFastForward");
+    audioSfxMutedByFastForward = fastForward && globalCfg.GetBool("Audio.FastForwardMuteSfx");
 }
 
 void EmuInstance::audioSync()
@@ -207,6 +209,11 @@ void EmuInstance::audioCallback(void* data, Uint8* stream, int len)
     }
 
     if (num_in < 1)
+        memset(stream, 0, len*sizeof(s16)*2);
+
+    // RealtimeBGM: the SPU output is everything the host renderer does not play (effects, cries,
+    // and the music itself when no host voice is active); the ring was already drained above
+    if (inst->audioSfxMutedByFastForward)
         memset(stream, 0, len*sizeof(s16)*2);
 
     if (inst->audioVolume < 256)

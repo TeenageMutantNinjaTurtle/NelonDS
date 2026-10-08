@@ -42,6 +42,7 @@ InterfaceSettingsDialog::InterfaceSettingsDialog(QWidget* parent) : QDialog(pare
     ui->cbMuteFastForward->setChecked(cfg.GetBool("MuteFastForward"));
     ui->cbRealtimeBgm->setChecked(cfg.GetBool("Audio.RealtimeBGM"));
     ui->cbFastForwardStretch->setChecked(cfg.GetBool("Audio.FastForwardStretch"));
+    ui->cbFastForwardMuteSfx->setChecked(cfg.GetBool("Audio.FastForwardMuteSfx"));
     ui->cbFastForwardFrameskip->setChecked(cfg.GetBool("Video.FastForwardFrameskip"));
     ui->spinTargetFPS->setValue(cfg.GetDouble("TargetFPS"));
     ui->spinFFW->setValue(cfg.GetDouble("FastForwardFPS"));
@@ -125,6 +126,7 @@ void InterfaceSettingsDialog::done(int r)
         cfg.SetBool("MuteFastForward", ui->cbMuteFastForward->isChecked());
         cfg.SetBool("Audio.RealtimeBGM", ui->cbRealtimeBgm->isChecked());
         cfg.SetBool("Audio.FastForwardStretch", ui->cbFastForwardStretch->isChecked());
+        cfg.SetBool("Audio.FastForwardMuteSfx", ui->cbFastForwardMuteSfx->isChecked());
         cfg.SetBool("Video.FastForwardFrameskip", ui->cbFastForwardFrameskip->isChecked());
 
         double val = ui->spinTargetFPS->value();

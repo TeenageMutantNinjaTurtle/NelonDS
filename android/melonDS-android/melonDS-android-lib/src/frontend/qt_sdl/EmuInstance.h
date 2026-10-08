@@ -320,6 +320,7 @@ private:
     float audioSampleFrac;
     bool audioMutedToggle;
     bool audioMutedByFastForward;
+    bool audioSfxMutedByFastForward;  // Audio.FastForwardMuteSfx, see updateFastForwardMute
     bool audioMutedByWindowFocus;
     bool audioFastForwardStretch = false;  // Audio.FastForwardStretch and Audio.RealtimeBGM, see updateRealtimeBgmSettings
     SDL_cond* audioSyncCond;

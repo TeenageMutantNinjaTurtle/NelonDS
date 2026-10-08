@@ -47,6 +47,14 @@
             app:iconSpaceReserved="false"
             android:defaultValue="true" />
 
+    <SwitchPreference
+            android:key="fast_forward_mute_sfx"
+            android:title="@string/fast_forward_mute_sfx"
+            android:summary="@string/fast_forward_mute_sfx_summary"
+            android:dependency="sound_enabled"
+            app:iconSpaceReserved="false"
+            android:defaultValue="false" />
+
     <ListPreference
             android:key="audio_latency"
             android:title="@string/audio_latency"

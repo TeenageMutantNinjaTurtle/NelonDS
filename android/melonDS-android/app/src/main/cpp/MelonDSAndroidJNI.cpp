@@ -54,6 +54,8 @@ bool limitFps = true;
 bool isFastForwardEnabled = false;
 // NelonDS: fast-forward frameskip
 bool fastForwardFrameskip = true;
+// NelonDS: silence everything but the host-rendered BGM while fast-forwarding (after PokeDaisy's FF music mode)
+bool fastForwardMuteSfx = false;
 float displayRefreshRate = 60;
 int renderEveryN = 1;
 
@@ -72,6 +74,7 @@ Java_me_magnum_melonds_MelonEmulator_setupEmulator(JNIEnv* env, jobject thiz, jo
     MelonDSAndroid::EmulatorConfiguration finalEmulatorConfiguration = MelonDSAndroidConfiguration::buildEmulatorConfiguration(env, emulatorConfiguration);
     fastForwardSpeedMultiplier = finalEmulatorConfiguration.fastForwardSpeedMultiplier;
     fastForwardFrameskip = finalEmulatorConfiguration.fastForwardFrameskip;
+    fastForwardMuteSfx = finalEmulatorConfiguration.fastForwardMuteSfx;
 
     globalCameraManager = env->NewGlobalRef(cameraManager);
 
@@ -569,6 +572,7 @@ Java_me_magnum_melonds_MelonEmulator_updateEmulatorConfiguration(JNIEnv* env, jo
 
     fastForwardSpeedMultiplier = newConfiguration.fastForwardSpeedMultiplier;
     fastForwardFrameskip = newConfiguration.fastForwardFrameskip;
+    fastForwardMuteSfx = newConfiguration.fastForwardMuteSfx;
 
     MelonDSAndroid::updateEmulatorConfiguration(std::make_unique<MelonDSAndroid::EmulatorConfiguration>(std::move(newConfiguration)));
 

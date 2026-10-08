@@ -2,6 +2,8 @@
 
 A fork of melonDS that includes some of the PRs not merged into it yet and a novel feature that **PRESERVES ORIGINAL MUSIC SPEED DURING FAST FORWARD** while keeping sound effects sped up to not have them overlay each other.
 
+Showcase video: [music-preserving fast-forward](media/ShowcaseMusicPreservingFastForward.mp4)
+
 This sounds quite decent in a few pokemon games which is what I am mainly interested in.
 
 How does it work? I don't know and I don't care I'm busy vibin to the music while EV training my pokemon.
@@ -16,8 +18,6 @@ Also didn't like the settings menu so did some rounds of AI for it too.
 ---
 
 AI SLOP
-
-Showcase video: [music-preserving fast-forward](media/ShowcaseMusicPreservingFastForward.mp4)
 
 - `melonDS/`: the emulator core and Qt frontend (upstream melonDS-emu/melonDS). The `nelonds` branch of this repo carries the change set that is also proposed upstream as `TeenageMutantNinjaTurtle/melonDS:realtime-bgm-fastforward`.
 - `android/melonDS-android/`: the Android app (rafaelvcaetano/melonDS-android) with its core `melonDS-android-lib/` vendored in-tree instead of as a submodule, plus the NelonDS hooks and the Thor-tuned `nelon` build type.

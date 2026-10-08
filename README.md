@@ -2,7 +2,7 @@
 
 A fork of melonDS that includes some of the PRs not merged into it yet and a novel feature that **PRESERVES ORIGINAL MUSIC SPEED DURING FAST FORWARD** while keeping sound effects sped up to not have them overlay each other.
 
-Showcase video: [music-preserving fast-forward](media/ShowcaseMusicPreservingFastForward.mp4)
+https://github.com/user-attachments/assets/1848c92d-d9a3-48ca-9098-0e0a95b94754
 
 This sounds quite decent in a few pokemon games which is what I am mainly interested in.
 

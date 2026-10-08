@@ -17,6 +17,8 @@ Also didn't like the settings menu so did some rounds of AI for it too.
 
 AI SLOP
 
+Showcase video: [music-preserving fast-forward](media/ShowcaseMusicPreservingFastForward.mp4)
+
 - `melonDS/`: the emulator core and Qt frontend (upstream melonDS-emu/melonDS). The `nelonds` branch of this repo carries the change set that is also proposed upstream as `TeenageMutantNinjaTurtle/melonDS:realtime-bgm-fastforward`.
 - `android/melonDS-android/`: the Android app (rafaelvcaetano/melonDS-android) with its core `melonDS-android-lib/` vendored in-tree instead of as a submodule, plus the NelonDS hooks and the Thor-tuned `nelon` build type.
 - `docs/`: design notes and research.
